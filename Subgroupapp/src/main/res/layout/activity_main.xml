@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.myapplicationtest2.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:leftbackground="@color/colorPrimary"
+        app:lefttext="左按钮"
+        app:lefttextsize="13sp"
+        app:rightbackground="@color/colorPrimary"
+        app:righttext="右按钮"
+        app:righttextsize="13sp"
+        app:title="标题"
+        app:titlebackground="@color/colorPrimaryDark"
+        app:titletextsize="19sp" />
+
+    <Button
+        android:id="@+id/bt_fruit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topbar"
+        android:text="Fruit"
+        android:textAllCaps="false" />
+
+    <Button
+    android:id="@+id/bt_news"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/bt_fruit"
+    android:text="News"
+    android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_Broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_news"
+        android:text="Broadcast"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_offline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_Broadcast"
+        android:text="Offline"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_contentprovider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_offline"
+        android:text="contentprovider"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_readcontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_contentprovider"
+        android:text="readcontact"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_readcontact"
+        android:text="Notification"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/bt_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_notification"
+        android:text="Camera"
+        android:textAllCaps="false" />
+</RelativeLayout>
