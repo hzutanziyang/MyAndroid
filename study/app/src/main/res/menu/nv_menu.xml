@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/me"
+            android:title="me"
+            android:icon="@drawable/me"/>
+        <item
+            android:id="@+id/friend"
+            android:title="friend"
+            android:icon="@drawable/friend"/>
+        <item
+            android:id="@+id/communnity"
+            android:title="communnity"
+            android:icon="@drawable/communnity"/>
+        <item
+            android:id="@+id/money"
+            android:title="money"
+            android:icon="@drawable/money"/>
+        <item
+            android:id="@+id/setting"
+            android:title="setting"
+            android:icon="@drawable/setting"/>
+    </group>
+</menu>

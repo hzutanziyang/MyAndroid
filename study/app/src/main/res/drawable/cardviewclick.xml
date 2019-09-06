@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--触摸状态时颜色-->
+    <item android:drawable="@color/colorGray" android:state_focused="true"/>
+    <!--点击状态时颜色-->
+    <item android:drawable="@color/colorGray" android:state_pressed="true"/>
+    <!--默认颜色-->
+    <item android:drawable="@color/colorWhite" android:state_pressed="false">
+        <shape android:shape="rectangle">
+
+            <corners android:radius="5dp"/>
+            <stroke android:width="2dp"
+                    android:color="@color/colorAccent"/>
+        </shape>
+    </item>
+    <item android:drawable="@color/colorWhite" android:state_focused="false">
+        <shape android:shape="rectangle">
+
+            <corners android:radius="5dp"/>
+            <stroke android:width="2dp"
+                    android:color="@color/colorAccent"/>
+        </shape>
+    </item>
+</selector>
