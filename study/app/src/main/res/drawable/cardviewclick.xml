@@ -5,20 +5,6 @@
     <!--点击状态时颜色-->
     <item android:drawable="@color/colorGray" android:state_pressed="true"/>
     <!--默认颜色-->
-    <item android:drawable="@color/colorWhite" android:state_pressed="false">
-        <shape android:shape="rectangle">
+    <item android:drawable="@color/colorWhite" android:state_pressed="false"/>
 
-            <corners android:radius="5dp"/>
-            <stroke android:width="2dp"
-                    android:color="@color/colorAccent"/>
-        </shape>
-    </item>
-    <item android:drawable="@color/colorWhite" android:state_focused="false">
-        <shape android:shape="rectangle">
-
-            <corners android:radius="5dp"/>
-            <stroke android:width="2dp"
-                    android:color="@color/colorAccent"/>
-        </shape>
-    </item>
 </selector>

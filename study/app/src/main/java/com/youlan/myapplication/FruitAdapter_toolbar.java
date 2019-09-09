@@ -6,14 +6,12 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -25,7 +23,7 @@ import java.util.List;
  * date   : 2019/9/3 14:34
  * desc   :
  */
-public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
+public class FruitAdapter_toolbar extends RecyclerView.Adapter<FruitAdapter_toolbar.ViewHolder>
 {
     private Context mContext;
 
@@ -51,14 +49,14 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
         }
     }
 
-    public FruitAdapter(List<Fruit> fruitList){
+    public FruitAdapter_toolbar(List<Fruit> fruitList){
         this.mFruitList = fruitList;
     }
 
     @SuppressLint("ClickableViewAccessibility")
     @NonNull
     @Override
-    public  ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
+    public  ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, final int i)
     {
         if(mContext == null) {
             mContext = viewGroup.getContext();
@@ -66,6 +64,21 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
 
         View view = LayoutInflater.from(mContext).inflate(R.layout.fruit_item,viewGroup,false);
         final ViewHolder holder = new ViewHolder(view);
+
+        holder.cardView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                int position = holder.getAdapterPosition();
+                Fruit fruit = mFruitList.get(position);
+                Intent intent = new Intent(mContext,FruitActivity.class);
+                intent.putExtra(FruitToolbar.FRUIT_NAME,fruit.getName());
+                intent.putExtra(FruitToolbar.FRUIT_IMAGE_ID,fruit.getImageid());
+                mContext.startActivity(intent);
+            }
+        });
+
 //        holder.cardView.setOnTouchListener(new View.OnTouchListener()
 //        {
 //            @Override
@@ -78,21 +91,22 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
 //                return false;
 //            }
 //        });
-        holder.mlinearLayout.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                int position = holder.getAdapterPosition();
-                Log.d("------ Position ------", String.valueOf(position));
-                Fruit fruit = mFruitList.get(position);
-                Toast.makeText(view.getContext(),"你点击了: " + fruit.getName(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(mContext,FruitToolbar.class);
-                intent.putExtra(FruitToolbar.FRUIT_NAME,fruit.getName());
-                intent.putExtra(FruitToolbar.FRUIT_IMAGE_ID,fruit.getImageid());
-                mContext.startActivity(intent);
-            }
-        });
+
+
+//        holder.mlinearLayout.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View view)
+//            {
+//                int position = holder.getAdapterPosition();
+//                Log.d("------ Position ------", String.valueOf(position));
+//                Fruit fruit = mFruitList.get(position);
+//                Toast.makeText(view.getContext(),"你点击了: " + fruit.getName(),Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+
+
 //        holder.fruitImage.setOnClickListener(new View.OnClickListener()
 //        {
 //            @Override
